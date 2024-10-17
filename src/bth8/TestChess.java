@@ -30,9 +30,7 @@ public class TestChess {
                     break;
                 }
             }
-
-            board.displayBoard();
-
+            board.displayBoard();//hien thi ban co sau moi lan random
         }
 
     }

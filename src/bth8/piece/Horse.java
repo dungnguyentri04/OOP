@@ -16,6 +16,7 @@ public class Horse extends Piece {
     //danh sach diem den hop le
     public List<Point> listPossiblePosition(int x, int y, Board board){
         List<Point> pointListPossible = new ArrayList<>();
+        //cac cach di chuyen
         int[] moveX = {-2, -2, -1, 1, 2, 2, 1, -1};
         int[] moveY = {-1, 1, 2, 2, 1, -1, -2, -2};
         int[] checkX = {-1, -1, 0, 0, 1, 1, 0, 0};
@@ -30,7 +31,6 @@ public class Horse extends Piece {
             //kiem tra ra ngoai bien va cac quan co chan duong di
             if (board.getBoard()[x0][y0] != -1 && board.getBoard()[preventPositionX][preventPositionY] == 0) pointListPossible.add(new Point(x0, y0));
         }
-
         return pointListPossible;
     }
 

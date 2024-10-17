@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-    private int[][] board;
-    private List<Piece> pieceList;
+    private int[][] board;//bieu dien ban co
+    private List<Piece> pieceList;// luu cac quan co hien tai
 
     public Board(){
         board = new int[14][13];
@@ -24,19 +24,18 @@ public class Board {
                 }
             }
         }
-
     }
 
     public boolean canAdd(Piece piece){
         return true;
     }//can sua them
 
-    //them vi tri quan co
+    //bieu dien vi tri quan co tren ban co
     public void addQuanCo(Piece piece){
         board[piece.getX()][piece.getY()] = piece.getValue();
     }
 
-    //xoa vi tri quan co
+    //xoa vi tri quan co tren ban co
     public void deleteQuanCo(Piece piece){
         board[piece.getX()][piece.getY()] = 0;
     }

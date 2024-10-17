@@ -17,19 +17,16 @@ public class Cannon extends Piece {
         if (board.getBoard()[x][y] == -1) return -1;//ra khoi bien
         else if (board.getBoard()[x][y] > 0) return 0; // gap quan co khac
         else return 1; // khong gap quan co nao
-
     }
 
     public List<Point> listPossiblePosition(int x, int y, Board board){
         List<Point> pointListPossible = new ArrayList<>();
-        int x0 = x, y0 =y;
-
+        int x0 = x, y0 = y;//vi tri di chuyen
         //kiem tra hang doc tren
         while (true){
             x0 --;
             if (checkPositionCannon(x0, y, board) == -1) break;
             else if (checkPositionCannon(x0, y, board) == 0) {// buoc di nhay qua mot quan co
-                pointListPossible.add(new Point(x0, y));
                 while (true) {
                     x0 --;
                     if (checkPositionCannon(x0, y, board) == -1) break;
@@ -37,7 +34,6 @@ public class Cannon extends Piece {
                         pointListPossible.add(new Point(x0, y));
                         break;
                     }
-                    else pointListPossible.add(new Point(x0, y));
                 }
                 x0 = x;
                 break;
@@ -50,7 +46,6 @@ public class Cannon extends Piece {
             x0 ++;
             if (checkPositionCannon(x0, y, board) == -1) break;
             else if (checkPositionCannon(x0, y, board) == 0) {
-                pointListPossible.add(new Point(x0, y));
                 while (true) {
                     x0 ++;
                     if (checkPositionCannon(x0, y, board) == -1) break;
@@ -58,7 +53,6 @@ public class Cannon extends Piece {
                         pointListPossible.add(new Point(x0, y));
                         break;
                     }
-                    else pointListPossible.add(new Point(x0, y));
                 }
                 x0 = x;
                 break;
@@ -70,7 +64,6 @@ public class Cannon extends Piece {
             y0 --;
             if (checkPositionCannon(x, y0, board) == -1) break;
             else if (checkPositionCannon(x, y0, board) == 0) {
-                pointListPossible.add(new Point(x, y0));
                 while (true) {
                     y0 --;
                     if (checkPositionCannon(x, y0, board) == -1) break;
@@ -78,7 +71,6 @@ public class Cannon extends Piece {
                         pointListPossible.add(new Point(x, y0));
                         break;
                     }
-                    else pointListPossible.add(new Point(x, y0));
                 }
                 y0 = y;
                 break;
@@ -90,7 +82,6 @@ public class Cannon extends Piece {
             y0 ++;
             if (checkPositionCannon(x, y0, board) == -1) break;
             else if (checkPositionCannon(x, y0, board) == 0) {
-                pointListPossible.add(new Point(x, y0));
                 while (true) {
                     y0 ++;
                     if (checkPositionCannon(x, y0, board) == -1) break;
@@ -98,14 +89,13 @@ public class Cannon extends Piece {
                         pointListPossible.add(new Point(x, y0));
                         break;
                     }
-                    else pointListPossible.add(new Point(x, y0));
                 }
                 y0 = y;
                 break;
             }
             else pointListPossible.add(new Point(x, y0));
         }
-        return new ArrayList<>();
+        return pointListPossible;
     }
 
     @Override

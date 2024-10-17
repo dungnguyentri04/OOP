@@ -72,7 +72,6 @@ public class Chariot extends Piece {
             }
             else pointListPossible.add(new Point(x, y0));
         }
-
         return pointListPossible;
     }
 
