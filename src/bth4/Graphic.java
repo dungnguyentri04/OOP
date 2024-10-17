@@ -42,4 +42,8 @@ public class Graphic extends Shape{
     public Graphic clone() {
         return new Graphic(this);
     }
+
+    public List<Shape> getShapes() {
+        return shapes;
+    }
 }
