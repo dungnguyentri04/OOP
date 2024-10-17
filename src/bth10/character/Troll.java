@@ -1,6 +1,8 @@
-package bth10;
+package bth10.character;
 
-public class Troll extends Character{
+import bth10.Character;
+
+public class Troll extends Character {
     @Override
     public void fight() {
         if (weaponBehavior != null) {

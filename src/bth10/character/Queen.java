@@ -1,6 +1,8 @@
-package bth10;
+package bth10.character;
 
-public class Queen extends Character{
+import bth10.Character;
+
+public class Queen extends Character {
     @Override
     public void fight() {
         if (weaponBehavior != null) {
